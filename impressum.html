@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum | Praxis Dr. Wallbach</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --deep: #1b3a5c;
+  --ocean: #1a6fa0;
+  --sky: #5cc8e8;
+  --cream: #f5f8fa;
+  --white: #ffffff;
+  --text: #2c3e50;
+  --muted: #7a8d9c;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--ocean); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 1.1rem; font-weight: 300;
+  color: var(--muted); text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span { color: var(--deep); font-weight: 500; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: 0.875rem; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ocean); text-decoration: none; }
+.nav-cta {
+  background: var(--ocean); color: var(--white);
+  padding: 0.6rem 1.5rem; border-radius: 6px;
+  font-size: 0.875rem; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--deep); text-decoration: none; }
+
+/* CONTENT */
+.page-header {
+  padding: 8rem 2rem 3rem;
+  background: var(--cream);
+  text-align: center;
+}
+.page-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem; color: var(--deep);
+}
+.page-header p {
+  color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem;
+}
+.content {
+  max-width: 760px; margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem; color: var(--deep);
+  margin: 2.5rem 0 0.75rem;
+}
+.content h2:first-child { margin-top: 0; }
+.content p { margin-bottom: 0.75rem; color: var(--text); font-size: 0.92rem; }
+.content .info-block {
+  background: var(--cream); border-radius: 12px;
+  padding: 1.5rem 2rem; margin: 1.5rem 0;
+  border-left: 3px solid var(--ocean);
+}
+.content .info-block p { margin-bottom: 0.3rem; }
+.content .info-block strong { color: var(--deep); }
+
+/* FOOTER */
+footer {
+  background: var(--cream); padding: 3rem 2rem; text-align: center;
+}
+footer p { color: var(--muted); font-size: 0.8rem; margin-top: 0.4rem; }
+.footer-copy { margin-top: 1rem; opacity: 0.5; }
+
+@media (max-width: 600px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .nav-links { display: none; }
+  .content { padding: 2rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="20" viewBox="0 0 120 55" fill="none"><path d="M10 38 C30 52, 70 52, 110 30 C90 48, 40 50, 10 38Z" fill="#1a6fa0"/><path d="M40 10 C55 2, 80 8, 95 22 C78 14, 55 12, 40 18Z" fill="#5cc8e8"/></svg>
+    <span>wallbach</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="index.html#praxis">Praxis</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="tel:08961840" class="nav-cta">089 61 84 00</a>
+</nav>
+
+<div class="page-header">
+  <h1>Impressum</h1>
+  <p>Angaben gemäß §5 DDG</p>
+</div>
+
+<div class="content">
+
+  <h2>Herausgeber & inhaltlich Verantwortlich</h2>
+  <div class="info-block">
+    <p><strong>Anna-Lena Wallbach und Dr. Jan Wallbach</strong></p>
+    <p>Grünauer Allee 49, 82008 Unterhaching</p>
+    <p>Telefon: 089 / 61 84 00</p>
+    <p>E-Mail: <a href="mailto:info@dr-wallbach.de">info@dr-wallbach.de</a></p>
+    <p>Internet: <a href="https://www.dr-wallbach.de">www.dr-wallbach.de</a></p>
+  </div>
+
+  <h2>Berufsbezeichnung</h2>
+  <p><strong>Anna-Lena Wallbach</strong><br>Zahnärztin, Approbation verliehen in der Bundesrepublik Deutschland</p>
+  <p><strong>Dr. Jan Wallbach</strong><br>Zahnarzt, Approbation verliehen in der Bundesrepublik Deutschland</p>
+
+  <h2>Zuständige Kammer bzw. Aufsichtsbehörde</h2>
+  <p><strong>Bayerische Landeszahnärztekammer</strong><br>Fallstr. 34, 81369 München<br><a href="http://www.blzk.de" target="_blank">www.blzk.de</a></p>
+  <p><strong>Regierung von Oberbayern</strong> (als Approbationsbehörde)<br>Maximilianstr. 39, 80538 München<br><a href="http://www.regierung.oberbayern.bayern.de" target="_blank">www.regierung.oberbayern.bayern.de</a></p>
+  <p><strong>Kassenzahnärztliche Vereinigung Bayern</strong><br>Fallstr. 34, 81369 München<br><a href="http://www.kzvb.de" target="_blank">www.kzvb.de</a></p>
+
+  <h2>Berufsrechtliche Regelungen</h2>
+  <p>Zahnheilkundegesetz, Heilberufe-Kammergesetz, Gebührenordnung für Zahnärzte (GOZ), Berufsordnung für die Bayerischen Zahnärzte. Die Regelungen sind im Gesetzblatt des Freistaates Bayern und bei der Bayerischen Landeszahnärztekammer in der Rubrik „Berufsrechtliche Regelungen" zugänglich.</p>
+
+  <p>Umsatzsteueridentifikationsnummer: nicht vorhanden</p>
+
+  <h2>Haftungshinweis</h2>
+  <p>Wir sind ständig bemüht, die Inhalte auf unseren Seiten auf dem neuesten Stand zu halten. Dennoch können wir keine Haftung oder Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Information übernehmen. Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir auch keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+  <p>Die auf diesen Seiten dargestellten Abbildungen und Beiträge sind urheberrechtlich geschützt. Jegliche Verwendung bedarf einer vorherigen schriftlichen Zustimmung unsererseits.</p>
+
+</div>
+
+<footer>
+  <svg width="140" height="60" viewBox="0 0 260 110" fill="none"><path d="M50 48 C80 68, 140 68, 210 35 C170 60, 90 64, 50 48Z" fill="#1a6fa0"/><path d="M100 12 C120 4, 155 10, 175 28 C150 18, 120 16, 100 22Z" fill="#5cc8e8"/></svg>
+  <p>Grünauer Allee 49, 82008 Unterhaching · <a href="tel:08961840">089 61 84 00</a></p>
+  <p><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  <p class="footer-copy">© 2026 Zahnarztpraxis Dr. Wallbach</p>
+</footer>
+
+</body>
+</html>

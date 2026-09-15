@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praxis Dr. Wallbach | Zahnheilkunde Unterhaching</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --deep: #1b3a5c;
+  --ocean: #1a6fa0;
+  --sky: #5cc8e8;
+  --mint: #b5e3f0;
+  --cream: #f5f8fa;
+  --warm: #e4edf2;
+  --white: #ffffff;
+  --text: #2c3e50;
+  --muted: #7a8d9c;
+  --accent: #1a6fa0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem; font-weight: 300;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span { color: var(--deep); font-weight: 500; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: 0.875rem; font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ocean); }
+.nav-cta {
+  background: var(--ocean); color: var(--white);
+  padding: 0.6rem 1.5rem; border-radius: 6px;
+  text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--deep); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 8rem 2rem 4rem;
+  background: url('cover.jpeg') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; right: -10%; top: -20%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(45,90,123,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-text h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.5rem; line-height: 1.15;
+  color: var(--deep);
+  margin-bottom: 1.5rem;
+}
+.hero-text p {
+  font-size: 1.1rem; color: var(--muted);
+  max-width: 480px; margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--ocean); color: var(--white);
+  padding: 0.85rem 2rem; border-radius: 8px;
+  text-decoration: none; font-weight: 500;
+  transition: all 0.25s; font-size: 0.95rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--deep); transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent; color: var(--ocean);
+  padding: 0.85rem 2rem; border-radius: 8px;
+  text-decoration: none; font-weight: 500;
+  border: 1.5px solid var(--ocean);
+  transition: all 0.25s; font-size: 0.95rem;
+}
+.btn-secondary:hover { background: var(--ocean); color: var(--white); }
+
+.hero-visual {
+  display: flex; justify-content: center; align-items: center;
+}
+.hero-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(26,35,50,0.08), 0 1px 3px rgba(0,0,0,0.04);
+  width: 100%; max-width: 420px;
+  position: relative;
+}
+.hero-card::before {
+  content: ''; position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(135deg, var(--ocean), var(--mint));
+  border-radius: 22px; z-index: -1; opacity: 0.15;
+}
+.card-badge {
+  display: inline-block;
+  background: rgba(45,90,123,0.08);
+  color: var(--ocean);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem; font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.card-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem; color: var(--deep);
+  margin-bottom: 0.5rem;
+}
+.card-subtitle {
+  color: var(--muted); font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+.card-hours { display: flex; flex-direction: column; gap: 0.6rem; }
+.card-hour-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.875rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.card-hour-row:last-child { border: none; }
+.day { font-weight: 500; color: var(--text); }
+.time { color: var(--muted); }
+
+/* TRUST BAR */
+.trust-bar {
+  padding: 3rem 2rem;
+  background: var(--deep);
+  display: flex; justify-content: center;
+  gap: 4rem; flex-wrap: wrap;
+}
+.trust-item { text-align: center; }
+.trust-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem; color: var(--white);
+}
+.trust-label { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 0.25rem; }
+
+/* SECTIONS */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  color: var(--ocean); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem; color: var(--deep);
+  margin-bottom: 1rem; line-height: 1.2;
+}
+.section-desc {
+  color: var(--muted); font-size: 1.05rem;
+  max-width: 560px; line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* SERVICES */
+.services { background: var(--cream); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(26,35,50,0.08);
+  border-color: rgba(45,90,123,0.1);
+}
+.service-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, rgba(26,111,160,0.08), rgba(92,200,232,0.12));
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.3rem;
+}
+.service-card h3 {
+  font-size: 1.05rem; font-weight: 600;
+  margin-bottom: 0.5rem; color: var(--deep);
+}
+.service-card p {
+  font-size: 0.875rem; color: var(--muted); line-height: 1.6;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.about-image {
+  background: linear-gradient(135deg, #1a6fa0, #5cc8e8);
+  border-radius: 20px;
+  height: 450px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.about-placeholder {
+  color: rgba(255,255,255,0.9);
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  text-align: center; padding: 2rem;
+  z-index: 1; position: relative;
+}
+.about-placeholder small {
+  display: block; margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem; opacity: 0.7;
+  font-style: italic;
+}
+.about-text h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem; color: var(--deep);
+  margin-bottom: 1.5rem;
+}
+.about-text p {
+  color: var(--muted); line-height: 1.8;
+  margin-bottom: 1rem; font-size: 0.95rem;
+}
+.doc-names {
+  margin-top: 2rem; display: flex; gap: 2rem;
+}
+.doc-name {
+  padding-left: 1rem;
+  border-left: 3px solid var(--ocean);
+}
+.doc-name strong { display: block; color: var(--deep); font-size: 0.95rem; }
+.doc-name span { color: var(--muted); font-size: 0.8rem; }
+
+/* PHILOSOPHY */
+.philosophy { background: var(--deep); color: var(--white); text-align: center; }
+.philosophy .section-label { color: var(--mint); }
+.philosophy .section-title { color: var(--white); }
+.philosophy .section-desc {
+  color: rgba(255,255,255,0.6);
+  margin: 0 auto 3rem;
+}
+.phil-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.phil-item {
+  padding: 2rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.phil-item h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem; margin-bottom: 0.75rem;
+}
+.phil-item p { color: rgba(255,255,255,0.55); font-size: 0.875rem; line-height: 1.65; }
+
+/* CONTACT */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.contact-info { display: flex; flex-direction: column; gap: 2rem; }
+.contact-block h3 {
+  font-size: 0.95rem; font-weight: 600;
+  margin-bottom: 0.4rem; color: var(--deep);
+}
+.contact-block p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.contact-block a { color: var(--ocean); text-decoration: none; }
+.contact-map {
+  background: var(--warm);
+  border-radius: 16px;
+  height: 100%; min-height: 340px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 0.9rem;
+  position: relative; overflow: hidden;
+}
+.map-placeholder {
+  text-align: center;
+}
+.map-placeholder svg { margin-bottom: 0.5rem; }
+
+/* FOOTER */
+footer {
+  background: var(--cream);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+footer .f-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem; color: var(--deep);
+  margin-bottom: 0.5rem;
+}
+footer p { color: var(--muted); font-size: 0.8rem; }
+footer a { color: var(--ocean); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .services-grid, .phil-grid { grid-template-columns: 1fr 1fr; }
+  #bewertungen [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .nav-links { display: none; }
+  .trust-bar { gap: 2rem; }
+}
+@media (max-width: 600px) {
+  .services-grid, .phil-grid { grid-template-columns: 1fr; }
+  .hero-text h1 { font-size: 2rem; }
+  section { padding: 4rem 1.25rem; }
+  .doc-names { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <svg width="40" height="22" viewBox="0 0 120 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 38 C30 52, 70 52, 110 30 C90 48, 40 50, 10 38Z" fill="#1a6fa0"/>
+      <path d="M40 10 C55 2, 80 8, 95 22 C78 14, 55 12, 40 18Z" fill="#5cc8e8"/>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#praxis">Praxis</a></li>
+    <li><a href="#philosophie">Philosophie</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="tel:08961840" class="nav-cta">089 61 84 00</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div style="text-align:center; margin-bottom:1.5rem;">
+      <svg width="320" height="120" viewBox="0 0 360 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M80 68 C120 100, 200 100, 290 50 C240 88, 140 92, 80 68Z" fill="#1a6fa0"/>
+        <path d="M140 18 C170 4, 225 12, 255 38 C220 22, 170 20, 140 32Z" fill="#5cc8e8"/>
+        <text x="180" y="105" text-anchor="middle" fill="#7a8d9c" font-family="Inter, sans-serif" font-size="16" font-weight="300" letter-spacing="0.5">Anna-Lena Wallbach  •  Dr. Jan Wallbach</text>
+        <text x="180" y="124" text-anchor="middle" fill="#b0bec5" font-family="Inter, sans-serif" font-size="11.5" font-weight="300" letter-spacing="0.5">Gemeinschaftspraxis für Zahnheilkunde</text>
+      </svg>
+      </div>
+      <h1>Ihre Zahngesundheit in besten Händen</h1>
+      <p>Moderne Zahnmedizin mit persönlicher Betreuung. In unserer Gemeinschaftspraxis in Unterhaching verbinden wir Fachkompetenz mit einfühlsamer Behandlung.</p>
+      <div class="hero-buttons">
+        <a href="tel:08961840" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Termin vereinbaren
+        </a>
+        <a href="#leistungen" class="btn-secondary">Unsere Leistungen</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="card-badge">Sprechzeiten</div>
+        <div class="card-title">Wir sind für Sie da</div>
+        <div class="card-subtitle">Terminwünsche unter 089 / 61 84 00</div>
+        <div class="card-hours">
+          <div class="card-hour-row"><span class="day">Montag</span><span class="time">8:30 – 12:30 &amp; 14:00 – 19:00</span></div>
+          <div class="card-hour-row"><span class="day">Dienstag</span><span class="time">8:30 – 12:30 &amp; 14:00 – 18:00</span></div>
+          <div class="card-hour-row"><span class="day">Mittwoch</span><span class="time">8:30 – 12:30</span></div>
+          <div class="card-hour-row"><span class="day">Donnerstag</span><span class="time">8:30 – 12:30 &amp; 14:00 – 18:00</span></div>
+          <div class="card-hour-row"><span class="day">Freitag</span><span class="time">8:30 – 13:00</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+
+<!-- SERVICES -->
+<section class="services" id="leistungen">
+  <div class="section-inner">
+    <div class="section-label">Leistungen</div>
+    <div class="section-title">Unser Behandlungsspektrum</div>
+    <div class="section-desc">Von der Vorsorge bis zum hochwertigen Zahnersatz — wir bieten Ihnen das gesamte Spektrum moderner Zahnmedizin.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Ästhetische Zahnmedizin</h3>
+        <p>Veneers, Bleaching und vollkeramische Restaurationen für ein strahlendes Lächeln.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <h3>Endodontie</h3>
+        <p>Schonende Wurzelkanalbehandlungen mit modernsten Methoden für den Zahnerhalt.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚕️</div>
+        <h3>Implantatprothetik</h3>
+        <p>Hochwertige Zahnimplantate als dauerhafte und ästhetische Lösung für fehlende Zähne.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🩺</div>
+        <h3>Parodontologie</h3>
+        <p>Umfassende Zahnfleischbehandlungen für ein gesundes Fundament Ihrer Zähne.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🦷</div>
+        <h3>Prophylaxe & PZR</h3>
+        <p>Professionelle Zahnreinigung und Individualprophylaxe für Kinder und Erwachsene.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <h3>Kinderzahnheilkunde</h3>
+        <p>Einfühlsame und altersgerechte Behandlung für unsere kleinsten Patienten.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <h3>Kariesinfiltration (Icon®)</h3>
+        <p>Innovative Kariesfrühbehandlung ganz ohne Bohren — schonend und effektiv.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Zahnärztliche Chirurgie</h3>
+        <p>Chirurgische Eingriffe und Zahnersatz mit höchster Präzision und Sorgfalt.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">😊</div>
+        <h3>Funktionstherapie</h3>
+        <p>Kiefergelenksbehandlung und Funktionstherapie bei Beschwerden im Kausystem.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem; display:flex; gap:2rem; flex-wrap:wrap;">
+      <div style="flex:1; min-width:260px; background:var(--white); border-radius:14px; padding:1.75rem; border:1px solid rgba(26,111,160,0.1);">
+        <h3 style="font-size:0.95rem; font-weight:600; color:var(--deep); margin-bottom:0.4rem;">🔔 Erinnerungsservice</h3>
+        <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">Recall-System für Ihre nächste Kontrolluntersuchung — wir erinnern Sie rechtzeitig.</p>
+      </div>
+      <div style="flex:1; min-width:260px; background:var(--white); border-radius:14px; padding:1.75rem; border:1px solid rgba(26,111,160,0.1);">
+        <h3 style="font-size:0.95rem; font-weight:600; color:var(--deep); margin-bottom:0.4rem;">🤝 Interdisziplinäre Zusammenarbeit</h3>
+        <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">Kieferorthopädie, Mund-Kiefer-Gesichts-Chirurgie, Logopädie und Physiotherapie/Osteopathie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="praxis">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image" style="background:none; padding:0;">
+        <img src="praxis.jpg" alt="Praxis Dr. Wallbach Unterhaching" style="width:100%; height:100%; object-fit:cover; border-radius:20px; display:block;">
+      </div>
+      <div class="about-text">
+        <div class="section-label">Über uns</div>
+        <h2>Ihre Gemeinschafts&shy;praxis in Unterhaching</h2>
+        <p>Seit vielen Jahren versorgen wir unsere Patientinnen und Patienten in Unterhaching und Umgebung mit kompetenter zahnmedizinischer Betreuung.</p>
+        <p>Besonderes Augenmerk legen wir auf eine individuelle Beratung und Therapie sowie eine einfühlsame und schmerzfreie Behandlung. Unser professionelles und freundliches Team ist stets mit viel Geduld für Sie da.</p>
+        <div class="doc-names">
+          <div class="doc-name">
+            <strong>Dr. Jan Wallbach</strong>
+            <span>Zahnarzt, Oralchirurgie</span>
+          </div>
+          <div class="doc-name">
+            <strong>Anna-Lena Wallbach</strong>
+            <span>Zahnärztin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophie">
+  <div class="section-inner">
+    <div class="section-label">Philosophie</div>
+    <div class="section-title">Was uns auszeichnet</div>
+    <div class="section-desc">Wir nehmen uns Zeit für Sie und behandeln Sie so, wie wir selbst behandelt werden möchten.</div>
+    <div class="phil-grid">
+      <div class="phil-item">
+        <h3>Individuelle Beratung</h3>
+        <p>Jeder Patient ist einzigartig. Wir erstellen Behandlungspläne, die genau auf Ihre Bedürfnisse zugeschnitten sind.</p>
+      </div>
+      <div class="phil-item">
+        <h3>Schmerzfreie Behandlung</h3>
+        <p>Mit modernen Methoden und einfühlsamer Betreuung sorgen wir dafür, dass Sie sich bei uns wohlfühlen.</p>
+      </div>
+      <div class="phil-item">
+        <h3>Kurze Wartezeiten</h3>
+        <p>Durch unser gut organisiertes Bestellsystem halten wir Ihre Wartezeit so gering wie möglich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEWERTUNGEN -->
+<section style="background:var(--cream); padding:6rem 2rem;" id="bewertungen">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">Google Bewertungen</div>
+    <div class="section-title">Das sagen unsere Patienten</div>
+    <div class="section-desc">5 von 5 Sternen auf Google — wir freuen uns über das Vertrauen unserer Patienten.</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+
+      <a href="https://www.google.com/maps/place/Zahnarztpraxis+Anna-Lena+und+Dr.+Jan+Wallbach/@48.0659,11.6131,17z/" target="_blank" rel="noopener" style="background:var(--white); border-radius:14px; padding:2rem; border:1px solid rgba(0,0,0,0.04); text-decoration:none; transition:all 0.3s; display:block;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.75rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--ocean);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.85rem;">M</div>
+          <div><strong style="font-size:0.88rem;color:var(--deep);">Markus</strong><br><span style="font-size:0.72rem;color:var(--muted);">Local Guide · 22 avis</span></div>
+        </div>
+        <div style="color:#f5b400; font-size:1rem; margin-bottom:0.6rem;">★★★★★</div>
+        <p style="font-size:0.88rem; color:var(--text); line-height:1.7; margin-bottom:0.75rem;">„Tolle Praxis, tolles Team, toller Arzt. War hier kürzlich für eine Kontrolle + Zahnreinigung und das macht ja normalerweise nicht unbedingt Spaß, aber ich habe mich sehr wohlgefühlt. Kompetent und schnell, nichts ‚aufgeschwatzt' und alle extrem freundlich."</p>
+        <p style="font-size:0.75rem; color:var(--muted); display:flex; align-items:center; gap:0.3rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Google Bewertung
+        </p>
+      </a>
+
+      <a href="https://www.google.com/maps/place/Zahnarztpraxis+Anna-Lena+und+Dr.+Jan+Wallbach/@48.0659,11.6131,17z/" target="_blank" rel="noopener" style="background:var(--white); border-radius:14px; padding:2rem; border:1px solid rgba(0,0,0,0.04); text-decoration:none; transition:all 0.3s; display:block;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.75rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#e8a87c;color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.85rem;">T</div>
+          <div><strong style="font-size:0.88rem;color:var(--deep);">Tanja S.</strong><br><span style="font-size:0.72rem;color:var(--muted);">Local Guide · 67 avis</span></div>
+        </div>
+        <div style="color:#f5b400; font-size:1rem; margin-bottom:0.6rem;">★★★★★</div>
+        <p style="font-size:0.88rem; color:var(--text); line-height:1.7; margin-bottom:0.75rem;">„Beste Zahnarztpraxis in der ich jemals war. Dr. Wallbach ist sehr freundlich, kompetent und strahlt eine Ruhe aus, so dass man sich bestens aufgehoben fühlt und keinerlei Angst verspürt. Man wird gut beraten, das gesamte Team ist immer nett und gut gelaunt."</p>
+        <p style="font-size:0.75rem; color:var(--muted); display:flex; align-items:center; gap:0.3rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Google Bewertung
+        </p>
+      </a>
+
+      <a href="https://www.google.com/maps/place/Zahnarztpraxis+Anna-Lena+und+Dr.+Jan+Wallbach/@48.0659,11.6131,17z/" target="_blank" rel="noopener" style="background:var(--white); border-radius:14px; padding:2rem; border:1px solid rgba(0,0,0,0.04); text-decoration:none; transition:all 0.3s; display:block;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.75rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#7bc8a4;color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.85rem;">C</div>
+          <div><strong style="font-size:0.88rem;color:var(--deep);">Christin F.</strong><br><span style="font-size:0.72rem;color:var(--muted);">Local Guide · 28 avis</span></div>
+        </div>
+        <div style="color:#f5b400; font-size:1rem; margin-bottom:0.6rem;">★★★★★</div>
+        <p style="font-size:0.88rem; color:var(--text); line-height:1.7; margin-bottom:0.75rem;">„Super Zahnarztpraxis — uneingeschränkt empfehlbar! Die Ärzte nehmen sich Zeit, erklären ausführlich und verständlich. Das Schwesternteam ist sehr freundlich und man fühlt sich extrem wohl. Extra Lob an Schwester Kati für die exzellente Zahnreinigung."</p>
+        <p style="font-size:0.75rem; color:var(--muted); display:flex; align-items:center; gap:0.3rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Google Bewertung
+        </p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="kontakt">
+  <div class="section-inner">
+    <div class="section-label">Kontakt</div>
+    <div class="section-title">So finden Sie uns</div>
+    <div class="section-desc">Wir freuen uns auf Ihren Besuch in unserer Praxis in Unterhaching.</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h3>Adresse</h3>
+          <p>Grünauer Allee 49<br>82008 Unterhaching</p>
+        </div>
+        <div class="contact-block">
+          <h3>Telefon</h3>
+          <p><a href="tel:08961840">089 / 61 84 00</a></p>
+        </div>
+        <div class="contact-block">
+          <h3>E-Mail</h3>
+          <p><a href="mailto:info@dr-wallbach.de">info@dr-wallbach.de</a></p>
+        </div>
+        <div class="contact-block">
+          <h3>Notdienst</h3>
+          <p>Außerhalb der Sprechzeiten:<br><a href="tel:08972330930">089 / 72 33 093</a><br><a href="http://www.notdienst-zahn.de" target="_blank">notdienst-zahn.de</a></p>
+        </div>
+      </div>
+      <div class="contact-map" style="padding:0; overflow:hidden;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2664.5!2d11.6109!3d48.0659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf0b1a6b5c7f%3A0x0!2sGr%C3%BCnauer+Allee+49%2C+82008+Unterhaching!5e0!3m2!1sde!2sde!4v1700000000000"
+          width="100%" height="100%" style="border:0; min-height:340px; border-radius:16px;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg width="260" height="70" viewBox="0 0 360 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.5rem">
+    <path d="M110 48 C140 68, 200 68, 270 35 C230 60, 150 64, 110 48Z" fill="#1a6fa0"/>
+    <path d="M160 12 C180 4, 215 10, 235 28 C210 18, 180 16, 160 22Z" fill="#5cc8e8"/>
+    <text x="180" y="85" text-anchor="middle" fill="#1b3a5c" font-family="Inter, sans-serif" font-size="15" font-weight="300" letter-spacing="0.5">Anna-Lena Wallbach  •  Dr. Jan Wallbach</text>
+    <text x="180" y="102" text-anchor="middle" fill="#7a8d9c" font-family="Inter, sans-serif" font-size="10.5" font-weight="300" letter-spacing="0.5">Gemeinschaftspraxis für Zahnheilkunde</text>
+  </svg>
+  <p>Grünauer Allee 49, 82008 Unterhaching · <a href="tel:08961840">089 61 84 00</a></p>
+  <p style="margin-top:0.5rem"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  <p style="margin-top:1rem;opacity:0.5">© 2026 Zahnarztpraxis Dr. Wallbach</p>
+</footer>
+
+</body>
+</html>

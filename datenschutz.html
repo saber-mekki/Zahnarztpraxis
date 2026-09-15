@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz | Praxis Dr. Wallbach</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --deep: #1b3a5c;
+  --ocean: #1a6fa0;
+  --sky: #5cc8e8;
+  --cream: #f5f8fa;
+  --white: #ffffff;
+  --text: #2c3e50;
+  --muted: #7a8d9c;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--ocean); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 1.1rem; font-weight: 300;
+  color: var(--muted); text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span { color: var(--deep); font-weight: 500; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: 0.875rem; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ocean); text-decoration: none; }
+.nav-cta {
+  background: var(--ocean); color: var(--white);
+  padding: 0.6rem 1.5rem; border-radius: 6px;
+  font-size: 0.875rem; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--deep); text-decoration: none; }
+
+.page-header {
+  padding: 8rem 2rem 3rem;
+  background: var(--cream);
+  text-align: center;
+}
+.page-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem; color: var(--deep);
+}
+.page-header p {
+  color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem;
+}
+.content {
+  max-width: 760px; margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem; color: var(--deep);
+  margin: 2.5rem 0 0.75rem;
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-size: 1rem; color: var(--deep);
+  margin: 2rem 0 0.5rem; font-weight: 600;
+}
+.content p { margin-bottom: 0.75rem; color: var(--text); font-size: 0.92rem; }
+.content ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  font-size: 0.92rem; color: var(--text);
+}
+.content ul li { margin-bottom: 0.35rem; }
+.content .info-block {
+  background: var(--cream); border-radius: 12px;
+  padding: 1.5rem 2rem; margin: 1.5rem 0;
+  border-left: 3px solid var(--ocean);
+}
+.content .info-block p { margin-bottom: 0.3rem; }
+.content .info-block strong { color: var(--deep); }
+
+footer {
+  background: var(--cream); padding: 3rem 2rem; text-align: center;
+}
+footer p { color: var(--muted); font-size: 0.8rem; margin-top: 0.4rem; }
+.footer-copy { margin-top: 1rem; opacity: 0.5; }
+
+@media (max-width: 600px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .nav-links { display: none; }
+  .content { padding: 2rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="20" viewBox="0 0 120 55" fill="none"><path d="M10 38 C30 52, 70 52, 110 30 C90 48, 40 50, 10 38Z" fill="#1a6fa0"/><path d="M40 10 C55 2, 80 8, 95 22 C78 14, 55 12, 40 18Z" fill="#5cc8e8"/></svg>
+    <span>wallbach</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="index.html#praxis">Praxis</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="tel:08961840" class="nav-cta">089 61 84 00</a>
+</nav>
+
+<div class="page-header">
+  <h1>Datenschutzerklärung</h1>
+  <p>Informationen zum Schutz Ihrer persönlichen Daten</p>
+</div>
+
+<div class="content">
+
+  <h2>Verantwortliche Stelle</h2>
+  <div class="info-block">
+    <p><strong>Anna-Lena Wallbach und Dr. Jan Wallbach</strong></p>
+    <p>Grünauer Allee 49, 82008 Unterhaching</p>
+    <p>Telefon: 089 / 61 84 00</p>
+    <p>E-Mail: <a href="mailto:info@dr-wallbach.de">info@dr-wallbach.de</a></p>
+    <p>Internet: <a href="https://www.dr-wallbach.de">www.dr-wallbach.de</a></p>
+  </div>
+
+  <h2>Ihre Betroffenenrechte</h2>
+  <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte ausüben:</p>
+  <ul>
+    <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung</li>
+    <li>Berichtigung unrichtiger personenbezogener Daten</li>
+    <li>Löschung Ihrer bei uns gespeicherten Daten</li>
+    <li>Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch nicht löschen dürfen</li>
+    <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns</li>
+    <li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns abgeschlossen haben</li>
+  </ul>
+  <p>Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+  <p>Sie können sich jederzeit mit einer Beschwerde an die für Sie zuständige Aufsichtsbehörde wenden. Eine Liste der Aufsichtsbehörden finden Sie unter: <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank">bfdi.bund.de</a>.</p>
+
+  <h2>Zwecke der Datenverarbeitung</h2>
+  <p>Wir verarbeiten Ihre personenbezogenen Daten nur zu den in dieser Datenschutzerklärung genannten Zwecken. Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den genannten Zwecken findet nicht statt. Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn:</p>
+  <ul>
+    <li>Sie Ihre ausdrückliche Einwilligung dazu erteilt haben</li>
+    <li>die Verarbeitung zur Abwicklung eines Vertrags mit Ihnen erforderlich ist</li>
+    <li>die Verarbeitung zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist</li>
+    <li>die Verarbeitung zur Wahrung berechtigter Interessen erforderlich ist und kein Grund zur Annahme besteht, dass Sie ein überwiegendes schutzwürdiges Interesse an der Nichtweitergabe Ihrer Daten haben</li>
+  </ul>
+
+  <h2>Erfassung allgemeiner Informationen</h2>
+  <p>Wenn Sie auf unsere Website zugreifen, werden automatisch mittels eines Cookies Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, das verwendete Betriebssystem, den Domainnamen Ihres Internet-Service-Providers und ähnliches. Hierbei handelt es sich ausschließlich um Informationen, welche keine Rückschlüsse auf Ihre Person zulassen.</p>
+  <p>Diese Informationen sind technisch notwendig, um von Ihnen angeforderte Inhalte von Webseiten korrekt auszuliefern und fallen bei Nutzung des Internets zwingend an. Sie werden insbesondere zu folgenden Zwecken verarbeitet:</p>
+  <ul>
+    <li>Sicherstellung eines problemlosen Verbindungsaufbaus der Website</li>
+    <li>Sicherstellung einer reibungslosen Nutzung unserer Website</li>
+    <li>Auswertung der Systemsicherheit und -stabilität</li>
+    <li>Zu weiteren administrativen Zwecken</li>
+  </ul>
+
+  <h2>Cookies</h2>
+  <p>Wie viele andere Webseiten verwenden wir auch so genannte „Cookies". Cookies sind kleine Textdateien, die von einem Websiteserver auf Ihre Festplatte übertragen werden. Hierdurch erhalten wir automatisch bestimmte Daten wie z.B. IP-Adresse, verwendeter Browser, Betriebssystem und Ihre Verbindung zum Internet.</p>
+  <p>Cookies können nicht verwendet werden, um Programme zu starten oder Viren auf einen Computer zu übertragen. Anhand der in Cookies enthaltenen Informationen können wir Ihnen die Navigation erleichtern und die korrekte Anzeige unserer Webseiten ermöglichen.</p>
+  <p>In keinem Fall werden die von uns erfassten Daten an Dritte weitergegeben oder ohne Ihre Einwilligung eine Verknüpfung mit personenbezogenen Daten hergestellt.</p>
+  <p>Natürlich können Sie unsere Website grundsätzlich auch ohne Cookies betrachten. Bitte verwenden Sie die Hilfefunktionen Ihres Internetbrowsers, um zu erfahren, wie Sie Cookies deaktivieren können. Bitte beachten Sie, dass einzelne Funktionen unserer Website möglicherweise nicht funktionieren, wenn Sie die Verwendung von Cookies deaktiviert haben.</p>
+
+  <h2>Kontaktformular</h2>
+  <p>Treten Sie bzgl. Fragen jeglicher Art per E-Mail oder Kontaktformular mit uns in Kontakt, erteilen Sie uns zum Zwecke der Kontaktaufnahme Ihre freiwillige Einwilligung. Hierfür ist die Angabe einer validen E-Mail-Adresse erforderlich. Diese dient der Zuordnung der Anfrage und der anschließenden Beantwortung derselben. Die Angabe weiterer Daten ist optional. Die von Ihnen gemachten Angaben werden zum Zwecke der Bearbeitung der Anfrage sowie für mögliche Anschlussfragen gespeichert. Nach Erledigung der von Ihnen gestellten Anfrage werden personenbezogene Daten automatisch gelöscht.</p>
+
+  <h3>Verwendung von Google Analytics</h3>
+  <p>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. Google Analytics verwendet sog. „Cookies", also Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Webseite durch Sie ermöglichen. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Aufgrund der Aktivierung der IP-Anonymisierung auf diesen Webseiten, wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union zuvor gekürzt.</p>
+  <p>Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Webseite bezogenen Daten an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Browser Add On zur Deaktivierung von Google Analytics</a>.</p>
+
+  <h3>Verwendung von Scriptbibliotheken (Google Webfonts)</h3>
+  <p>Um unsere Inhalte browserübergreifend korrekt und grafisch ansprechend darzustellen, verwenden wir auf dieser Website Scriptbibliotheken und Schriftbibliotheken wie z.B. Google Webfonts. Google Webfonts werden zur Vermeidung mehrfachen Ladens in den Cache Ihres Browsers übertragen. Die Datenschutzrichtlinie von Google finden Sie hier: <a href="https://www.google.com/policies/privacy/" target="_blank">google.com/policies/privacy</a>.</p>
+
+  <h3>Verwendung von Adobe Typekit</h3>
+  <p>Wir setzen Adobe Typekit zur visuellen Gestaltung unserer Website ein. Typekit ist ein Dienst der Adobe Systems Software Ireland Ltd. der uns den Zugriff auf eine Schriftartenbibliothek gewährt. Weitere Informationen zu Adobe Typekit finden Sie in den Datenschutzhinweisen von Adobe: <a href="https://www.adobe.com/privacy/typekit.html" target="_blank">adobe.com/privacy/typekit.html</a>.</p>
+
+  <h3>Verwendung von Google Maps</h3>
+  <p>Diese Webseite verwendet Google Maps API, um geographische Informationen visuell darzustellen. Bei der Nutzung von Google Maps werden von Google auch Daten über die Nutzung der Kartenfunktionen durch Besucher erhoben, verarbeitet und genutzt. Nähere Informationen über die Datenverarbeitung durch Google können Sie den <a href="https://www.google.com/policies/privacy/" target="_blank">Google-Datenschutzhinweisen</a> entnehmen.</p>
+
+  <h3>Google AdWords</h3>
+  <p>Unsere Webseite nutzt das Google Conversion-Tracking. Sind Sie über eine von Google geschaltete Anzeige auf unsere Webseite gelangt, wird von Google Adwords ein Cookie auf Ihrem Rechner gesetzt. Das Cookie für Conversion-Tracking wird gesetzt, wenn ein Nutzer auf eine von Google geschaltete Anzeige klickt. Diese Cookies verlieren nach 30 Tagen ihre Gültigkeit und dienen nicht der persönlichen Identifizierung.</p>
+  <p>Möchten Sie nicht am Tracking teilnehmen, können Sie das hierfür erforderliche Setzen eines Cookies ablehnen — etwa per Browser-Einstellung, die das automatische Setzen von Cookies generell deaktiviert oder Ihren Browser so einstellen, dass Cookies von der Domain „googleleadservices.com" blockiert werden.</p>
+
+  <h2>Änderung unserer Datenschutzbestimmungen</h2>
+  <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+
+  <h2>Fragen an den Datenschutzbeauftragten</h2>
+  <div class="info-block">
+    <p><strong>Anna-Lena Wallbach und Dr. Jan Wallbach</strong></p>
+    <p>Grünauer Allee 49, 82008 Unterhaching</p>
+    <p>Telefon: 089 / 61 84 00</p>
+    <p>E-Mail: <a href="mailto:info@dr-wallbach.de">info@dr-wallbach.de</a></p>
+    <p>Internet: <a href="https://www.dr-wallbach.de">www.dr-wallbach.de</a></p>
+  </div>
+  <p style="font-size:0.82rem; color:var(--muted); margin-top:2rem;">Die Datenschutzerklärung wurde mit dem Datenschutzerklärungs-Generator der activeMind AG erstellt.</p>
+
+</div>
+
+<footer>
+  <svg width="140" height="60" viewBox="0 0 260 110" fill="none"><path d="M50 48 C80 68, 140 68, 210 35 C170 60, 90 64, 50 48Z" fill="#1a6fa0"/><path d="M100 12 C120 4, 155 10, 175 28 C150 18, 120 16, 100 22Z" fill="#5cc8e8"/></svg>
+  <p>Grünauer Allee 49, 82008 Unterhaching · <a href="tel:08961840">089 61 84 00</a></p>
+  <p><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  <p class="footer-copy">© 2026 Zahnarztpraxis Dr. Wallbach</p>
+</footer>
+
+</body>
+</html>
